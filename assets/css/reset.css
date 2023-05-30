@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+/* font정의 - 한글 noto sans KR */
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Nanum Gothic", sans-serif !important;
+}
+ul,
+li,
+ol {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #222;
+}

@@ -1,0 +1,159 @@
+@charset "utf-8";
+
+/* reset, 공통 css */
+* {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+ul,
+li,
+ol {
+  list-style: none;
+}
+body {
+  height: 100vh;
+  width: 100%;
+  background-color: #000;
+  font-size: 12px;
+  font-family: "Noto Sans KR", sans-serif !important;
+}
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  width: 820px;
+  padding: 30px;
+  border-radius: 10px;
+  display: flex;
+}
+#show:checked ~ .container {
+  display: block;
+}
+.container .login-form {
+  width: 45%;
+}
+/* 메인화면으로 가기 - 닫기 btn */
+.container a.xi-home {
+  position: absolute;
+  top: -50px;
+  left: -5px;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+.container .text {
+  font-size: 35px;
+  font-weight: 600;
+  text-align: center;
+}
+/* 로그인 배경 */
+.login-bg {
+  position: relative;
+  margin-left: 40px;
+  width: 45%;
+  background-image: url("img/spc_20.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.login-bg p {
+  font-size: 24px;
+  margin-top: 60px;
+}
+.logo-round {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  border-radius: 100%;
+}
+.logo-round img {
+  position: absolute;
+  width: 100px;
+  top: 30%;
+  left: 50%;
+}
+/* 로그인 정보 입력 섹션 */
+.container form {
+  margin-top: -20px;
+}
+.container form .data {
+  height: 45px;
+  width: 100%;
+  margin: 40px 0;
+}
+form .data label {
+  font-size: 18px;
+}
+form .data input {
+  margin-top: 5px;
+  height: 100%;
+  width: 100%;
+  padding-left: 10px;
+  font-size: 17px;
+  border: none;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+form .data input:focus {
+  outline: none;
+}
+form .forgot-pass {
+  margin-top: -8px;
+}
+form .forgot-pass a {
+  color: #3498db;
+  text-decoration: none;
+}
+form .forgot-pass a:hover {
+  text-decoration: underline;
+}
+form .btn {
+  margin: 30px 0;
+  height: 45px;
+  width: 103%;
+  position: relative;
+  overflow: hidden;
+}
+form .btn .inner {
+  height: 100%;
+  width: 300%;
+  position: absolute;
+  left: -100%;
+  z-index: -1;
+  background: -webkit-linear-gradient(
+    right,
+    #56d8e4,
+    #9f01ea,
+    #56d8e4,
+    #9f01ea
+  );
+  transition: all 0.4s;
+}
+form .btn:hover .inner {
+  left: 0;
+}
+form .btn button {
+  height: 100%;
+  width: 100%;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+form .signup-link {
+  text-align: center;
+}
+form .signup-link a {
+  color: #3498db;
+  text-decoration: none;
+}
+form .signup-link a:hover {
+  text-decoration: underline;
+}

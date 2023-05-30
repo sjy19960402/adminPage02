@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>join</title>
+    <!-- xelcon CDN-->
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+    />
+    <!-- fontawesome CDN-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+    />
+    <!-- googlefont -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- retty : join css -->
+    <link rel="stylesheet" href="./assets/css/join.css" />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!-- jQuery CDN -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.min.js"
+      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="center">
+      <div class="container">
+        <a href="index.html" class="xi-home" title="close"></a>
+        <div class="login-bg">
+          <p>아직&nbsp;<strong>회원</strong>이 아니신가요?</p>
+          <div class="check-box">
+            <label for="chk01">
+              <input type="checkbox" name="chk" id="chk01" />이용약관 동의<span
+                >(필수)</span
+              ></label
+            >
+            <a class="moreBtn">자세히보기</a>
+            <br />
+            <label for="chk02">
+              <input type="checkbox" name="chk" id="chk02" />개인 정보 수집 및
+              이용 동의<span>(필수)</span></label
+            >
+            <a class="moreBtn">자세히보기</a>
+            <br />
+            <label for="chk03">
+              <input type="checkbox" name="chk" id="chk03" />이벤트 등 프로모션
+              메일 수신 동의<span>(선택)</span></label
+            >
+            <a class="moreBtn">자세히보기</a>
+
+            <hr />
+
+            <!-- 전체 동의 -->
+            <label for="chkAll">
+              <input type="checkbox" name="check" id="cbx_chkAll" />약관 모두
+              동의</label
+            >
+          </div>
+        </div>
+        <div class="login-form">
+          <div class="text">Join</div>
+          <form class="userjoin">
+            <div class="data">
+              <input type="text" id="userID" placeholder="아이디" required />
+              <p class="id"></p>
+            </div>
+            <div class="data">
+              <input
+                type="password"
+                id="userPW"
+                placeholder="비밀번호"
+                required
+              />
+              <p class="password"></p>
+            </div>
+            <div class="data">
+              <input
+                type="password"
+                id="userPW_confirm"
+                placeholder="비밀번호 확인"
+                required
+              />
+              <p class="password_confirm"></p>
+            </div>
+            <div class="btn">
+              <div class="inner"></div>
+              <button type="submit" class="btn-point">join</button>
+            </div>
+            <div class="signup-link">
+              이미 회원이신가요? <a href="login.html">Login now</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // 로그인 유효성 검사 (정규식)
+      $(function () {
+        // FIXME: 필요 스크립트 전개 영역
+        let checkID = RegExp(/^[a-z0-9]{6,20}$/);
+        let checkPW = RegExp(
+          /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[~!@#$%^&*()_+])[A-Za-z\d~!@#$%^&*()_+]{8,}$/
+        );
+        let checkName = RegExp(/^[가-힣]|[A-Z]|[a-z]$/);
+        let checkPhone = RegExp(/^[0-9]+$/);
+        let checkEmail = RegExp(
+          /^([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/
+        );
+        let checkRecommendId = RegExp(/^[a-z0-9]{6,20}$/);
+
+        function checkForm() {
+          //userID
+          $("#userID").blur(function () {
+            if ($("#userID").val() == "") {
+              $(".id").text("아이디를 입력해주세요");
+              $("#userID").focus();
+              return false;
+            } else {
+              if (!checkID.test($("#userID").val())) {
+                $(".id").text(
+                  "영문 혹은 영문과 숫자를 조합하여 최소 6자리이상 20자리로 입력해주세요."
+                );
+                $("#userID").focus();
+                return false;
+              } else {
+                $(".id")
+                  .text("사용가능한 아이디입니다.")
+                  .css("color", "#3f8ef7");
+                $("#userPW").focus();
+                return true;
+              }
+            }
+          });
+
+          // userPW
+          $("#userPW").blur(function () {
+            if ($("#userPW").val() == "") {
+              $(".password").text("비밀번호를 입력해주세요");
+              $("#userPW").focus();
+              return false;
+            } else {
+              if (!checkPW.test($("#userPW").val())) {
+                $(".password")
+                  .text(
+                    "최소 하나의 영문 대소문자, 숫자, 특수문자를 포함하여 8자리 이상이어야 합니다."
+                  )
+                  .css("color", "red");
+                // $("#userPW").focus();
+                return false;
+              } else {
+                $(".password")
+                  .text("사용가능한 비밀번호 입니다.")
+                  .css("color", "#3f8ef7");
+                $("#userPW_confirm").focus();
+                return true;
+              }
+            }
+          });
+
+          //비밀번호 서로확인
+          $("#userPW_confirm").blur(function () {
+            if ($("#userPW").val() != $("#userPW_confirm").val()) {
+              // alert("비밀번호와 일치하게 입력해주세요.");
+              $(".password_confirm").text("비밀번호와 일치하게 입력해주세요.");
+              return false;
+            } else {
+              $(".password_confirm")
+                .text("비밀번호가 일치합니다.")
+                .css("color", "#3f8ef7");
+              $("#userName").focus();
+              return true;
+            }
+          });
+        }
+
+        checkForm();
+
+        // button 클릭시
+        $(".btn-point").click(function () {
+          if ($("#userID").val() == "" || $("#userPW").val() == "") {
+            alert("공백을 입력하세요.");
+            return false;
+          } else if ($("#userPW").val() != $("#userPW_confirm").val()) {
+            alert("비밀번호가 서로 일치하지 않습니다.");
+            return false;
+          } else if (
+            !checkID.test($("#userID").val()) ||
+            !checkPW.test($("#userPW").val())
+          ) {
+            alert("형식에 맞춰 작성해주세요.");
+            return false;
+          } else {
+            alert("회원가입이 완료 되었습니다 :)");
+            location.href = "/index.html";
+            console.log("userID: " + `${$("#userID").val()}`);
+            console.log(`userPW: ${$("#userPW").val()}`);
+            return true;
+          }
+        });
+      });
+
+      //   체크박스 전체 선택 / 선택 해제
+      $(document).ready(function () {
+        $("#cbx_chkAll").click(function () {
+          if ($("#cbx_chkAll").is(":checked"))
+            $("input[name=chk]").prop("checked", true);
+          else $("input[name=chk]").prop("checked", false);
+        });
+
+        $("input[name=chk]").click(function () {
+          var total = $("input[name=chk]").length;
+          var checked = $("input[name=chk]:checked").length;
+
+          if (total != checked) $("#cbx_chkAll").prop("checked", false);
+          else $("#cbx_chkAll").prop("checked", true);
+        });
+      });
+    </script>
+  </body>
+</html>
