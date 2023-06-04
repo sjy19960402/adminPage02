@@ -516,8 +516,12 @@
                     </a>
                   </div>
                   <div class="card-body">
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
+                    <a href="" class="card-link" onclick="modalOpen()"
+                      >자세히보기</a
+                    >
+                    <a href="" class="card-link" onclick="listModal()"
+                      >다른글보기</a
+                    >
                   </div>
                 </div>
                 <div
@@ -525,8 +529,10 @@
                 >
                   <span class="float-left">2 days ago</span>
                   <span class="tags float-right">
-                    <span class="badge badge-pill badge-primary">Branding</span>
-                    <span class="badge badge-pill badge-danger">Design</span>
+                    <span class="badge badge-pill badge-primary"
+                      >가게운영tip</span
+                    >
+                    <span class="badge badge-pill badge-danger">사장님</span>
                   </span>
                 </div>
               </div>
@@ -534,7 +540,7 @@
             <div class="col-xl-4 col-lg-12">
               <div class="card">
                 <div class="card-header">
-                  <h4 class="card-title">최근 리뷰</h4>
+                  <h4 class="card-title">주간 메뉴별 판매순위</h4>
                   <a class="heading-elements-toggle">
                     <i class="fa fa-ellipsis-v font-medium-3"></i>
                   </a>
@@ -563,7 +569,7 @@
                       </div>
                       <div class="media-body w-100">
                         <span class="list-group-item-heading"
-                          >Kristopher Candy
+                          >1. 초코소라빵
                         </span>
                         <ul class="list-unstyled users-list m-0 float-right">
                           <li
@@ -605,7 +611,7 @@
                         </ul>
                         <p class="list-group-item-text mb-0">
                           <span class="blue-grey lighten-2 font-small-3">
-                            #빠른배달
+                            #초코 #크림
                           </span>
                         </p>
                       </div>
@@ -623,7 +629,7 @@
                       </div>
                       <div class="media-body w-100">
                         <span class="list-group-item-heading"
-                          >Lawrence Fowler
+                          >2. 우유식빵
                         </span>
                         <ul class="list-unstyled users-list m-0 float-right">
                           <li
@@ -653,7 +659,7 @@
                         </ul>
                         <p class="list-group-item-text mb-0">
                           <span class="blue-grey lighten-2 font-small-3">
-                            #매장청결
+                            #데일리
                           </span>
                         </p>
                       </div>
@@ -671,7 +677,7 @@
                       </div>
                       <div class="media-body w-100">
                         <span class="list-group-item-heading"
-                          >Linda Olson
+                          >3. 생크림케이크 21호
                         </span>
                         <ul class="list-unstyled users-list m-0 float-right">
                           <li
@@ -701,7 +707,7 @@
                         </ul>
                         <p class="list-group-item-text mb-0">
                           <span class="blue-grey lighten-2 font-small-3">
-                            #친절한 직원
+                            #이벤트 #과일
                           </span>
                         </p>
                       </div>
@@ -718,7 +724,9 @@
                         </span>
                       </div>
                       <div class="media-body w-100">
-                        <span class="list-group-item-heading">Roy Clark </span>
+                        <span class="list-group-item-heading"
+                          >4. 찹쌀도넛
+                        </span>
                         <ul class="list-unstyled users-list m-0 float-right">
                           <li
                             data-toggle="tooltip"
@@ -747,7 +755,7 @@
                         </ul>
                         <p class="list-group-item-text mb-0">
                           <span class="blue-grey lighten-2 font-small-3">
-                            #케이크 포장이 미흡
+                            #달지않은빵
                           </span>
                         </p>
                       </div>
@@ -765,7 +773,7 @@
                       </div>
                       <div class="media-body w-100">
                         <span class="list-group-item-heading"
-                          >Kristopher Candy
+                          >5. 로제 샴페인
                         </span>
                         <ul class="list-unstyled users-list m-0 float-right">
                           <li
@@ -783,7 +791,7 @@
                         </ul>
                         <p class="list-group-item-text mb-0">
                           <span class="blue-grey lighten-2 font-small-3">
-                            #음료 퀄리티가 떨어짐
+                            #무알콜 #파티
                           </span>
                         </p>
                       </div>
@@ -842,6 +850,119 @@
       </div>
     </footer>
 
+    <!-- 자세히보기 : view more modal -->
+    <div class="modal" id="modal">
+      <!-- 모달 닫기 btn -->
+      <i class="xi-close" onclick="modalClose()"></i>
+      <div class="modal-content">
+        <div class="card-title">
+          <span class="badge_btn_3">파리바게트</span>
+          <br />
+          <a href="#">성수점</a>
+        </div>
+        <div class="card-inner"></div>
+      </div>
+    </div>
+
+    <!-- 메뉴 수정하기 modal -->
+    <div class="modal" id="listModal">
+      <div class="col-md-6">
+        <div class="card modal-content" style="height: 600px">
+          <div class="card-header">
+            <h4 class="card-title" id="basic-layout-colored-form-control">
+              Form with Bordered Controls
+            </h4>
+            <a class="heading-elements-toggle">
+              <i class="la la-ellipsis-v font-medium-3"></i>
+            </a>
+            <div class="heading-elements">
+              <ul class="list-inline mb-0">
+                <li>
+                  <a data-action="collapse">
+                    <i class="ft-minus"></i>
+                  </a>
+                </li>
+                <li>
+                  <a data-action="reload">
+                    <i class="ft-rotate-cw"></i>
+                  </a>
+                </li>
+                <li>
+                  <a data-action="expand">
+                    <i class="ft-maximize"></i>
+                  </a>
+                </li>
+                <li>
+                  <a onclick="listClose()">
+                    <i class="ft-x"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="card-content collapse show">
+            <div class="card-body">
+              <form class="form">
+                <div class="form-body">
+                  <h4 class="form-section">
+                    <i class="ft-briefcase"></i> 가게 정보 수정하기
+                  </h4>
+                  <div class="form-group">
+                    <label for="contactinput5">Name</label>
+                    <input
+                      class="form-control border-primary"
+                      type="text"
+                      placeholder="Name"
+                      id="contactinput5"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="contactinput5">Email</label>
+                    <input
+                      class="form-control border-primary"
+                      type="email"
+                      placeholder="Email"
+                      id="contactemail5"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="contactinput6">Website</label>
+                    <input
+                      class="form-control border-primary"
+                      type="url"
+                      placeholder="http://"
+                      id="contactinput6"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label>Contact Number</label>
+                    <input
+                      class="form-control border-primary"
+                      id="contactinput7"
+                      type="tel"
+                      placeholder="Contact Number"
+                    />
+                  </div>
+                </div>
+
+                <div class="form-actions right">
+                  <button type="button" class="btn btn-danger mr-1">
+                    <i class="ft-x"></i> Cancel
+                  </button>
+                  <button type="submit" class="btn btn-primary">
+                    <i class="la la-check-square-o"></i> Save
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- BEGIN VENDOR JS-->
     <script
       src="theme-assets/vendors/js/vendors.min.js"
@@ -870,5 +991,39 @@
       type="text/javascript"
     ></script>
     <!-- END PAGE LEVEL JS-->
+    <script
+      src="https://code.jquery.com/jquery-2.2.4.min.js"
+      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+      crossorigin="anonymous"
+    ></script>
+    <!-- 모달창 스크립트 -->
+    <script>
+      // view more 모달창 열기
+      function modalOpen() {
+        const modal = document.getElementById("modal");
+
+        modal.style.display = "block";
+      }
+
+      // view more 모달창 닫기
+      function modalClose() {
+        const modal = document.getElementById("modal");
+
+        modal.style.display = "none";
+      }
+
+      // 메뉴관리 - 메뉴 수정 모달 열고 닫기
+      function listModal() {
+        const modal = document.getElementById("listModal");
+
+        modal.style.display = "block";
+      }
+
+      function listClose() {
+        const modal = document.getElementById("listModal");
+
+        modal.style.display = "none";
+      }
+    </script>
   </body>
 </html>

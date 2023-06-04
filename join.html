@@ -35,7 +35,10 @@
   <body>
     <div class="center">
       <div class="container">
-        <a href="index.html" class="xi-home" title="close"></a>
+        <a href="index.html" title="close">
+          <i class="far fa-home-alt"></i>
+        </a>
+
         <div class="login-bg">
           <p>아직&nbsp;<strong>회원</strong>이 아니신가요?</p>
           <div class="check-box">
@@ -67,6 +70,41 @@
             >
           </div>
         </div>
+
+        <!-- 모바일버전 이용약관동의 -->
+        <div id="down" class="down">
+          <span class="down-light">이용약관</span>동의하기
+          <span class="right-down-btn"><i class="fas fa-chevron-down i01"></i>
+            <div class="none-text n01">
+              <label for="chk01">
+                <input type="checkbox" name="chk" id="chk01"/>&nbsp;이용약관 동의<span
+                  >(필수)</span
+                ></label
+              >
+              <a class="moreBtn">자세히보기</a>
+              <br />
+              <label for="chk02">
+                <input type="checkbox" name="chk" id="chk02" />&nbsp;개인 정보 수집 및
+                이용 동의<span>(필수)</span></label
+              >
+              <a class="moreBtn">자세히보기</a>
+              <br />
+              <label for="chk03">
+                <input type="checkbox" name="chk" id="chk03" />&nbsp;이벤트 등 프로모션
+                메일 수신 동의<span>(선택)</span></label
+              >
+              <a class="moreBtn">자세히보기</a>
+  
+              <hr/>
+  
+              <!-- 전체 동의 -->
+              <label for="chkAll">
+                <input type="checkbox" name="check" id="cbx_chkAll" />&nbsp;약관 모두
+                동의</label
+              >
+          </div>
+        </div>
+
         <div class="login-form">
           <div class="text">Join</div>
           <form class="userjoin">
@@ -225,6 +263,12 @@
           if (total != checked) $("#cbx_chkAll").prop("checked", false);
           else $("#cbx_chkAll").prop("checked", true);
         });
+
+        $( '#down' ).click( function() {
+    $( '.n01' ).slideToggle( 300 );
+    $( '.i01' ).toggleClass( 'fas fa-chevron-down fas fa-chevron-up' );
+  });
+
       });
     </script>
   </body>

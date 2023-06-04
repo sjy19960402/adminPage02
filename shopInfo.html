@@ -89,6 +89,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
     />
+    <!-- form.js -->
+    <script src="/assets/js/form.js"></script>
   </head>
   <body
     class="vertical-layout vertical-menu 2-columns menu-expanded fixed-navbar"
@@ -330,8 +332,7 @@
       <div class="btn_1">
         <a
           class="btn btn-block btn-glow btn-upgrade-pro mx-1 btn_1"
-          href="https://themeselection.com/products/chameleon-admin-modern-bootstrap-webapp-dashboard-html-template-ui-kit/"
-          target="_blank"
+          href="login.html"
           >LogIn</a
         >
       </div>
@@ -427,23 +428,47 @@
 
                         <!-- 서브컨텐츠 - 색상별로 분리되는 매장정보 -->
                         <article class="sub-cont">
-                          <!-- 매장관리 : 가게정보 -->
+                          <!-- 매장관리 : 가게정보 입력칸 -->
                           <div class="au-card red-line">
-                            <div class="au-task__item-inner">
-                                <form id="form">
-                                    <input type="text" id="msg">
-                                    <button type="submit" id="btn">입력</button>
-                                </form>
-                                <h1 class="feedback">값을 입력하세요</h1>
-                              <h5 class="task">
-                                <a href="#" class="txt"></a>
-                              </h5>
+                            <div class="card col-xl-4 col-lg-6 col-md-12">
+                                <div class="card-header">
+                                    <h4 class="card-title">가게 이름</h4>
+                                </div>
+                                    <div class="card-body">
+                                        <fieldset class="form-group">
+                                            <input type="text" class="form-control" id="basicInput">
+                                        </fieldset>
+                                    </div>
+                            </div>
+                          </div>
+                          <div class="au-card red-line">
+                            <div class="card col-xl-4 col-lg-6 col-md-12">
+                                <div class="card-header">
+                                    <h4 class="card-title">가게 주소</h4>
+                                </div>
+                                    <div class="card-body">
+                                        <fieldset class="form-group">
+                                            <input type="text" class="form-control" id="basicInput">
+                                        </fieldset>
+                                    </div>
+                            </div>
+                          </div>
+                          <div class="au-card red-line">
+                            <div class="card col-xl-4 col-lg-6 col-md-12">
+                                <div class="card-header">
+                                    <h4 class="card-title">카테고리</h4>
+                                </div>
+                                    <div class="card-body">
+                                        <fieldset class="form-group">
+                                            <input type="text" class="form-control" id="basicInput">
+                                        </fieldset>
+                                    </div>
                             </div>
                           </div>
                           
                           <div class="btn-box-main">
                             <button class="btn_2" onclick="modalOpen()">
-                              View more
+                              수정
                             </button>
                           </div>
                         </article>

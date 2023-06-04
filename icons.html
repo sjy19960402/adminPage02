@@ -80,10 +80,7 @@
       rel="stylesheet"
     />
     <!-- xelcon CDN-->
-    <link
-      rel="stylesheet"
-      href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
-    />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
     <!-- fontawesome CDN-->
     <link
       rel="stylesheet"
@@ -330,8 +327,7 @@
       <div class="btn_1">
         <a
           class="btn btn-block btn-glow btn-upgrade-pro mx-1 btn_1"
-          href="https://themeselection.com/products/chameleon-admin-modern-bootstrap-webapp-dashboard-html-template-ui-kit/"
-          target="_blank"
+          href="login.html"
           >LogIn</a
         >
       </div>
@@ -439,7 +435,7 @@
                           <div class="au-card blue-line">
                             <div class="au-task__item-inner">
                               <h5 class="task">
-                                <a href="#">소보루식당</a>
+                                <a href="#" onclick="listModal()">소보루식당</a>
                               </h5>
                               <span class="time">가게이름</span>
                             </div>
@@ -551,6 +547,85 @@
       </div>
     </footer>
 
+        <!-- 메뉴 수정하기 modal -->
+        <div class="modal" id="listModal">
+          <div class="col-md-6">
+            <div class="card modal-content" style="height: 600px;">
+              <div class="card-header">
+                <h4 class="card-title" id="basic-layout-colored-form-control">Form with Bordered Controls</h4>
+                <a class="heading-elements-toggle">
+                  <i class="la la-ellipsis-v font-medium-3"></i>
+                </a>
+                <div class="heading-elements">
+                  <ul class="list-inline mb-0">
+                    <li>
+                      <a data-action="collapse">
+                        <i class="ft-minus"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a data-action="reload">
+                        <i class="ft-rotate-cw"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a data-action="expand">
+                        <i class="ft-maximize"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a onclick="listClose()">
+                        <i class="ft-x"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="card-content collapse show">
+                <div class="card-body">
+                  <form class="form">
+                    <div class="form-body">
+      
+                      <h4 class="form-section">
+                        <i class="ft-briefcase"></i> 가게 정보 수정하기</h4>
+                      <div class="form-group">
+                        <label for="contactinput5">Name</label>
+                        <input class="form-control border-primary" type="text" placeholder="Name" id="contactinput5">
+                      </div>
+      
+                      <div class="form-group">
+                        <label for="contactinput5">Email</label>
+                        <input class="form-control border-primary" type="email" placeholder="Email" id="contactemail5">
+                      </div>
+      
+                      <div class="form-group">
+                        <label for="contactinput6">Website</label>
+                        <input class="form-control border-primary" type="url" placeholder="http://" id="contactinput6">
+                      </div>
+      
+                      <div class="form-group">
+                        <label>Contact Number</label>
+                        <input class="form-control border-primary" id="contactinput7" type="tel" placeholder="Contact Number">
+                      </div>
+      
+                    </div>
+      
+                    <div class="form-actions right">
+                      <button type="button" class="btn btn-danger mr-1">
+                        <i class="ft-x"></i> Cancel
+                      </button>
+                      <button type="submit" class="btn btn-primary">
+                        <i class="la la-check-square-o"></i> Save
+                      </button>
+                    </div>
+                  </form>
+      
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+
     <!-- BEGIN VENDOR JS-->
     <script
       src="theme-assets/vendors/js/vendors.min.js"
@@ -571,5 +646,19 @@
     <!-- END CHAMELEON  JS-->
     <!-- BEGIN PAGE LEVEL JS-->
     <!-- END PAGE LEVEL JS-->
+    <script>
+      // 메뉴관리 - 메뉴 수정 모달 열고 닫기
+function listModal() {
+    const modal = document.getElementById("listModal");
+
+    modal.style.display = "block";
+}
+
+function listClose() {
+    const modal = document.getElementById("listModal");
+
+    modal.style.display = "none";
+}
+    </script>
   </body>
 </html>

@@ -157,3 +157,15 @@ form .signup-link a {
 form .signup-link a:hover {
   text-decoration: underline;
 }
+/* 모바일 버전 */
+@media (max-width: 767px) {
+  .container {
+    width: 300px;
+  }
+  .login-bg {
+    display: none;
+  }
+  .container .login-form {
+    width: 100%;
+  }
+}
